@@ -43,6 +43,13 @@ export const ALL_USER_ITEMS_QUERY = gql`
       items {
         ...ItemFields
       }
+      id
+      email
+      name
+      bio
+      borrowed {
+        ...ItemFields
+      }
     }
   }
   ${ItemFields}

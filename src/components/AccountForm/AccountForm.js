@@ -6,6 +6,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 /**
  * @TODO: Uncomment the following lines when authentication is added to the form
  *
@@ -107,15 +108,16 @@ class AccountForm extends Component {
                 type="button"
                 onClick={() => {
                   // @TODO: Reset the form on submit
-                  this.setState({
-                    formToggle: !this.state.formToggle
-                  });
+                  // this.setState({
+                  //   formToggle: !this.state.formToggle
+                  // });
                 }}
               >
                 {this.state.formToggle
                   ? 'Create an account.'
                   : 'Login to existing account.'}
               </button>
+              <Link to="/items">enter</Link>
             </Typography>
           </Grid>
         </FormControl>

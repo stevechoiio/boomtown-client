@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { ALL_ITEMS_QUERY } from '../../apollo/queries';
-
+import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,6 +9,19 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import MenuBar from '../../components/MenuBar';
 import { withRouter } from 'react-router-dom';
+
+const styles = {
+  card: {
+    Width: 600,
+    Height: 600,
+
+    textAlign: 'center'
+  },
+  media: {
+    height: 140
+  }
+};
+
 const Items = ({ classes, history }) => {
   return (
     <div>
@@ -20,9 +33,10 @@ const Items = ({ classes, history }) => {
             if (error) return `Error! ${error.message}`;
 
             return (
-              <>
+              <Grid container spacing={24}>
                 {data.items.map(item => (
                   <Card
+                    style={styles.card}
                     onClick={() => {
                       history.push(`/profile/${item.itemowner.id}`);
                     }}
@@ -38,7 +52,7 @@ const Items = ({ classes, history }) => {
                     </CardContent>
                   </Card>
                 ))}
-              </>
+              </Grid>
             );
           }}
         </Query>

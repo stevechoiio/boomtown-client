@@ -12,7 +12,7 @@ export default () => (
     <Route exact path="/welcome" component={HomeContainer} />
     <Route exact path="/share" component={ShareContainer} />
     <Route exact path="/profile" component={ProfileContainer} />
-    <Route exact path="/profile/:id" component={ProfileContainer} />
+    <Route path="/profile/:id" component={ProfileContainer} />
     <Redirect path="/items" />
   </Switch>
 );
